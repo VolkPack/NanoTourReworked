@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">NanoTourReworked</string>
+    <string name="palo_alto_button_text">Palo Alto Attractions</string>
+
+    <string-array name="attraction_names_PA">
+        <item>Pizza My Heart</item>
+        <item>Cheesecake Factory</item>
+        <item>Standford Shopping Mall</item>
+        <item>The Melt</item>
+        <item>Sees Candy</item>
+    </string-array>
+
+    <string-array name="attraction_address_PA">
+        <item>Somewhere on University</item>
+        <item>Downtown Palo Alto</item>
+        <item>In Palo Alto</item>
+        <item>In Stanford Shopping mall</item>
+        <item>In Stanford as well</item>
+    </string-array>
+</resources>
