@@ -72,7 +72,7 @@ public class AttractionList extends AppCompatActivity {
         int[] fullImgID = new int[ATTRACTION_MAX];
 
         fullImgID[0] = R.drawable.pizzamyheart;
-        fullImgID[1] = R.drawable.cheesecakefactoryfull;
+        fullImgID[1] = R.drawable.cheesecakefactoryfullimg;
         fullImgID[2] = R.drawable.stanfordfullimg;
         fullImgID[3] = R.drawable.meltfullimg;
         fullImgID[4] = R.drawable.seesfullimg;
