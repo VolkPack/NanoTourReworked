@@ -34,15 +34,13 @@ public class AttractionList extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-        //System.out.println(attraction.get(0).getmAddress());
-
     }
     private ArrayList<Attraction> fillArrayList(){
 
         ArrayList<Attraction> list = new ArrayList<>();
         String[] names = getResources().getStringArray(R.array.attraction_names_PA);
         String[] address = getResources().getStringArray(R.array.attraction_address_PA);
+        String[] desc = getResources().getStringArray(R.array.attraction_desc_PA);
         int[] thumbID = setThumbIds();
         int[] fullImgId = setFullImgId();
 
@@ -50,21 +48,23 @@ public class AttractionList extends AppCompatActivity {
             Attraction attraction = new Attraction();
             attraction.setmName(names[i]);
             attraction.setmAddress(address[i]);
-            attraction.setmThumbId(thumbID[i]); //TODO Set IMG Thumb ID
-            attraction.setmImgId(fullImgId[i]); //TODO Set IMG IDS
+            attraction.setmThumbId(thumbID[i]);
+            attraction.setmImgId(fullImgId[i]);
+            attraction.setmDesc(desc[i]);
             list.add(attraction);
         }
-
         return list;
     }
 
     private int[] setThumbIds(){
         int[] thumbIds = new int[ATTRACTION_MAX];
+
         thumbIds[0] = R.drawable.pmhthumb;
         thumbIds[1] = R.drawable.cheesethumb;
         thumbIds[2] = R.drawable.ssmthumb;
         thumbIds[3] = R.drawable.meltthumbimg;
         thumbIds[4] = R.drawable.seethumbimg;
+
         return thumbIds;
     }
 
@@ -76,6 +76,7 @@ public class AttractionList extends AppCompatActivity {
         fullImgID[2] = R.drawable.stanfordfullimg;
         fullImgID[3] = R.drawable.meltfullimg;
         fullImgID[4] = R.drawable.seesfullimg;
+
         return fullImgID;
     }
 }
