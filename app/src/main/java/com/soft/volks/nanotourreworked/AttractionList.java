@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -12,51 +13,90 @@ import java.util.ArrayList;
 public class AttractionList extends AppCompatActivity {
 
     private final int ATTRACTION_MAX = 5;
+    String[] names;
+    String[] address;
+    String[] desc;
+    int[] thumbs;
+    int[] full;
+    ArrayList<Attraction> attraction = new ArrayList<>();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attraction_list);
 
-        Intent intent = getIntent();
-        final ArrayList<Attraction> attraction = fillArrayList();
+        Button rest = (Button) findViewById(R.id.rests);
+        Button mus = (Button) findViewById(R.id.mus);
+        Button mon = (Button) findViewById(R.id.mon);
+        Button ints = (Button) findViewById(R.id.ints);
 
-        AttractionListAdapter attractionListAdapter = new AttractionListAdapter(this, attraction);
-        ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
-        listView.setAdapter(attractionListAdapter);
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        rest.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onClick(View v) {
+               // setInts();
+                ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
+                AttractionListAdapter attractionListAdapter = new AttractionListAdapter(AttractionList.this, attraction);
+                listView.setAdapter(attractionListAdapter);
+                attractionListAdapter.notifyDataSetChanged();
 
-                Intent intent = new Intent(AttractionList.this, AttractionDetail.class);
-                intent.putExtra("ATTRACTION", attraction.get(position));
-                startActivity(intent);
             }
         });
+        mus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               // setInts();
+                ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
+                AttractionListAdapter attractionListAdapter = new AttractionListAdapter(AttractionList.this, attraction);
+                listView.setAdapter(attractionListAdapter);
+                attractionListAdapter.notifyDataSetChanged();
+
+            }
+        });
+        mon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //setInts();
+                ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
+                AttractionListAdapter attractionListAdapter = new AttractionListAdapter(AttractionList.this, attraction);
+                listView.setAdapter(attractionListAdapter);
+                attractionListAdapter.notifyDataSetChanged();
+
+            }
+        });
+
+        ints.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setInts();
+                ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
+                AttractionListAdapter attractionListAdapter = new AttractionListAdapter(AttractionList.this, attraction);
+                listView.setAdapter(attractionListAdapter);
+                attractionListAdapter.notifyDataSetChanged();
+
+            }
+        });
+
     }
-    private ArrayList<Attraction> fillArrayList(){
+
+    private ArrayList<Attraction> fillArrayList(String[] what, String[] where, String[] why, int[] thumb, int[] full){
 
         ArrayList<Attraction> list = new ArrayList<>();
-        String[] names = getResources().getStringArray(R.array.attraction_names_PA);
-        String[] address = getResources().getStringArray(R.array.attraction_address_PA);
-        String[] desc = getResources().getStringArray(R.array.attraction_desc_PA);
-        int[] thumbID = setThumbIds();
-        int[] fullImgId = setFullImgId();
 
         for(int i = 0; i < ATTRACTION_MAX; i++){
             Attraction attraction = new Attraction();
-            attraction.setmName(names[i]);
-            attraction.setmAddress(address[i]);
-            attraction.setmThumbId(thumbID[i]);
-            attraction.setmImgId(fullImgId[i]);
-            attraction.setmDesc(desc[i]);
+            attraction.setmName(what[i]);
+            attraction.setmAddress(where[i]);
+            attraction.setmThumbId(thumb[i]);
+            attraction.setmImgId(full[i]);
+            attraction.setmDesc(why[i]);
             list.add(attraction);
         }
         return list;
     }
 
-    private int[] setThumbIds(){
+    private int[] setThumbIdsforInterests(){
         int[] thumbIds = new int[ATTRACTION_MAX];
 
         thumbIds[0] = R.drawable.pmhthumb;
@@ -68,7 +108,7 @@ public class AttractionList extends AppCompatActivity {
         return thumbIds;
     }
 
-    private int[] setFullImgId(){
+    private int[] setFullImgIdForInterests(){
         int[] fullImgID = new int[ATTRACTION_MAX];
 
         fullImgID[0] = R.drawable.pizzamyheart;
@@ -78,5 +118,24 @@ public class AttractionList extends AppCompatActivity {
         fullImgID[4] = R.drawable.seesfullimg;
 
         return fullImgID;
+    }
+
+    private void setInts(){
+        ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
+        names = getResources().getStringArray(R.array.interests_names_PA);
+        address = getResources().getStringArray(R.array.interests_address_PA);
+        desc = getResources().getStringArray(R.array.interests_desc_pa);
+        thumbs = setThumbIdsforInterests();
+        full = setFullImgIdForInterests();
+        attraction = fillArrayList(names, address, desc, thumbs, full);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(AttractionList.this, AttractionDetail.class);
+                intent.putExtra(getString(R.string.ATTRACTION), attraction.get(position));
+                startActivity(intent);
+            }
+        });
     }
 }

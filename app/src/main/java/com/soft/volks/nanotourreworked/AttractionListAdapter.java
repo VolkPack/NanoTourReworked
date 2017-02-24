@@ -44,4 +44,9 @@ public class AttractionListAdapter extends ArrayAdapter<Attraction> {
 
         return listItemView;
     }
+    @Override
+    public void notifyDataSetChanged() // Create this function in your adapter class
+    {
+        super.notifyDataSetChanged();
+    }
 }

@@ -13,7 +13,7 @@ public class AttractionDetail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_attraction_detail);
         Intent intent = getIntent();
-        Attraction attraction = (Attraction)intent.getSerializableExtra("ATTRACTION");
+        Attraction attraction = (Attraction)intent.getSerializableExtra(getString(R.string.ATTRACTION));
 
         ImageView fullImg = (ImageView) findViewById(R.id.fullIImage);
         TextView title = (TextView) findViewById(R.id.titleName);
