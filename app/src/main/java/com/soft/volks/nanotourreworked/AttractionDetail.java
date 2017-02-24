@@ -22,5 +22,6 @@ public class AttractionDetail extends AppCompatActivity {
 
         title.setText(attraction.getmName());
         address.setText(attraction.getmAddress());
+        fullImg.setImageResource(attraction.getmImgId());
     }
 }

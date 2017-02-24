@@ -14,7 +14,6 @@ public class Attraction implements Serializable{
     private int mThumbId;
     private int mFullImgId;
     private int mImgId;
-    private int mPhotoId;
 
 
     public Attraction() {
@@ -65,13 +64,6 @@ public class Attraction implements Serializable{
         this.mDesc = mDesc;
     }
 
-    public int getmPhotoId() {
-        return mPhotoId;
-    }
-
-    public void setmPhotoId(int mPhotoId) {
-        this.mPhotoId = mPhotoId;
-    }
 
     public int getmImgId() {
         return mImgId;

@@ -43,15 +43,15 @@ public class AttractionList extends AppCompatActivity {
         ArrayList<Attraction> list = new ArrayList<>();
         String[] names = getResources().getStringArray(R.array.attraction_names_PA);
         String[] address = getResources().getStringArray(R.array.attraction_address_PA);
-        //int[] thumbID = setThumbIds();
-        //int[] fullImgId = setFullImgId()
+        int[] thumbID = setThumbIds();
+        int[] fullImgId = setFullImgId();
 
         for(int i = 0; i < ATTRACTION_MAX; i++){
             Attraction attraction = new Attraction();
             attraction.setmName(names[i]);
             attraction.setmAddress(address[i]);
-            //attraction.setmThumbId(); //TODO Set IMG Thumb ID
-            //attraction.setmImgId(); //TODO Set IMG IDS
+            attraction.setmThumbId(thumbID[i]); //TODO Set IMG Thumb ID
+            attraction.setmImgId(fullImgId[i]); //TODO Set IMG IDS
             list.add(attraction);
         }
 
@@ -60,13 +60,22 @@ public class AttractionList extends AppCompatActivity {
 
     private int[] setThumbIds(){
         int[] thumbIds = new int[ATTRACTION_MAX];
-        //TODO SET IDS
+        thumbIds[0] = R.drawable.pmhthumb;
+        thumbIds[1] = R.drawable.cheesethumb;
+        thumbIds[2] = R.drawable.ssmthumb;
+        thumbIds[3] = R.drawable.meltthumbimg;
+        thumbIds[4] = R.drawable.seethumbimg;
         return thumbIds;
     }
 
     private int[] setFullImgId(){
         int[] fullImgID = new int[ATTRACTION_MAX];
-        //TODO SET IDS
+
+        fullImgID[0] = R.drawable.pizzamyheart;
+        fullImgID[1] = R.drawable.cheesecakefactoryfull;
+        fullImgID[2] = R.drawable.stanfordfullimg;
+        fullImgID[3] = R.drawable.meltfullimg;
+        fullImgID[4] = R.drawable.seesfullimg;
         return fullImgID;
     }
 }

@@ -34,7 +34,11 @@ public class AttractionListAdapter extends ArrayAdapter<Attraction> {
         if(currentAttraction.getmThumbId() == 0) {
             ImageView thumb = (ImageView) listItemView.findViewById(R.id.attraction_thumb);
             thumb.setImageResource(R.drawable.missing_img);
+        }else {
+            ImageView thumb = (ImageView) listItemView.findViewById(R.id.attraction_thumb);
+            thumb.setImageResource(currentAttraction.getmThumbId());
         }
+
         TextView title = (TextView) listItemView.findViewById(R.id.attraction_list_name);
         title.setText(currentAttraction.getmName());
 
