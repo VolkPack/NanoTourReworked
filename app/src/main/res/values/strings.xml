@@ -2,6 +2,28 @@
     <string name="app_name">NanoTourReworked</string>
     <string name="palo_alto_button_text">Palo Alto Attractions</string>
 
+    <string-array name="rest_names_PA">
+        <item>Evvia Estiatorio</item>
+        <item>Rangoon Ruby Burmese Cuisine</item>
+        <item>Tamarine Restaurant and Gallery</item>
+        <item>Reposado</item>
+        <item>Bird Dog</item>
+    </string-array>
+    <string-array name="rest_address_PA">
+        <item>420 Emerson St, Palo Alto, CA 94301</item>
+        <item>445 Emerson St, Palo Alto, CA 94301</item>
+        <item>546 University Ave, Palo Alto, CA 94301</item>
+        <item>236 Hamilton Ave, Palo Alto, CA 94301</item>
+        <item>420 Ramona St, Palo Alto, CA 94301</item>
+    </string-array>
+    <string-array name="rest_desc_PA">
+        <item>Destination for refined renderings of classic Greek dishes in lively surroundings.</item>
+        <item>Relaxed Burmese restaurant with contemporary decor, a trendy bar and exotic tiki cocktails.</item>
+        <item>Modern Vietnamese winner stays busy furnishing creative small and large plates in an artful space.</item>
+        <item>Trendy spot for high-end Mexican fare with a popular bar scene thanks to their margarita selection.</item>
+        <item>Stylish, minimalistic dinner bistro for Californian and Japanese eats made with local ingredients.</item>
+    </string-array>
+
     <string-array name="interests_names_PA">
         <item>Pizza My Heart</item>
         <item>Cheesecake Factory</item>

@@ -16,9 +16,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".AttractionList"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".AttractionDetail"
-            android:parentActivityName=".AttractionList"></activity>
+            android:parentActivityName=".MainActivity"
+            android:alwaysRetainTaskState="true"/>
+        <activity android:name=".AttractionDetail"></activity>
     </application>
 
 </manifest>

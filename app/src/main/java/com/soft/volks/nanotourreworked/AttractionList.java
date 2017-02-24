@@ -35,7 +35,7 @@ public class AttractionList extends AppCompatActivity {
         rest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // setInts();
+                setRests();
                 ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
                 AttractionListAdapter attractionListAdapter = new AttractionListAdapter(AttractionList.this, attraction);
                 listView.setAdapter(attractionListAdapter);
@@ -118,6 +118,25 @@ public class AttractionList extends AppCompatActivity {
         fullImgID[4] = R.drawable.seesfullimg;
 
         return fullImgID;
+    }
+
+    private void setRests(){
+        ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
+        names = getResources().getStringArray(R.array.rest_names_PA);
+        address = getResources().getStringArray(R.array.rest_address_PA);
+        desc = getResources().getStringArray(R.array.rest_desc_PA);
+        thumbs = setThumbIdsforInterests();//TODO ADD PICTURES
+        full = setFullImgIdForInterests();//TODO ADD PICTURES
+        attraction = fillArrayList(names, address, desc, thumbs, full);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent intent = new Intent(AttractionList.this, AttractionDetail.class);
+                intent.putExtra(getString(R.string.ATTRACTION), attraction.get(position));
+                startActivity(intent);
+            }
+        });
     }
 
     private void setInts(){
