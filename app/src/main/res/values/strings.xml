@@ -9,7 +9,7 @@
         <item>Reposado</item>
         <item>Bird Dog</item>
     </string-array>
-    
+
     <string-array name="rest_address_PA">
         <item>420 Emerson St, Palo Alto, CA 94301</item>
         <item>445 Emerson St, Palo Alto, CA 94301</item>
@@ -54,7 +54,7 @@
 
     <string name="rest">Restaurants</string>
     <string name="mus">Museums</string>
-    <string name="mon">Monuments</string>
+    <string name="parks">Parks</string>
     <string name="ints">Interests</string>
 
 </resources>
