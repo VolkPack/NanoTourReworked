@@ -16,8 +16,8 @@ public class AttractionList extends AppCompatActivity {
     String[] names;
     String[] address;
     String[] desc;
-    int[] thumbs;
-    int[] full;
+    int[] thumbs = null;
+    int[] full = null;
     ArrayList<Attraction> attraction = new ArrayList<>();
 
 
@@ -29,7 +29,7 @@ public class AttractionList extends AppCompatActivity {
 
         Button rest = (Button) findViewById(R.id.rests);
         Button mus = (Button) findViewById(R.id.mus);
-        Button mon = (Button) findViewById(R.id.mon);
+        Button parks = (Button) findViewById(R.id.parks);
         Button ints = (Button) findViewById(R.id.ints);
 
         rest.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +54,7 @@ public class AttractionList extends AppCompatActivity {
 
             }
         });
-        mon.setOnClickListener(new View.OnClickListener() {
+        parks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 //setInts();
