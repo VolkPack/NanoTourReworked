@@ -46,7 +46,7 @@ public class AttractionList extends AppCompatActivity {
         mus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // setInts();
+                setInts(); //palceholder data
                 ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
                 AttractionListAdapter attractionListAdapter = new AttractionListAdapter(AttractionList.this, attraction);
                 listView.setAdapter(attractionListAdapter);
@@ -57,7 +57,7 @@ public class AttractionList extends AppCompatActivity {
         parks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //setInts();
+                setInts(); //placeholder data
                 ListView listView = (ListView) findViewById(R.id.activity_attraction_list);
                 AttractionListAdapter attractionListAdapter = new AttractionListAdapter(AttractionList.this, attraction);
                 listView.setAdapter(attractionListAdapter);

@@ -12,7 +12,6 @@ public class Attraction implements Serializable{
     private String mAddress;
     private String mDesc;
     private int mThumbId;
-    private int mFullImgId;
     private int mImgId;
 
 
@@ -21,16 +20,10 @@ public class Attraction implements Serializable{
         mAddress = null;
         mDesc = null;
         mThumbId = 0;
-        mFullImgId = 0;
+        mImgId = 0;
     }
 
-    public int getmFullImgId() {
-        return mFullImgId;
-    }
 
-    public void setmFullImgId(int mFullImgId) {
-        this.mFullImgId = mFullImgId;
-    }
 
     public int getmThumbId() {
         return mThumbId;
